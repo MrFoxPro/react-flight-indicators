@@ -69,7 +69,7 @@ Sparky.task("client", () => {
   fuse
     .bundle("bundle")
     .target("browser")
-    .watch("**")
+    .watch()
     .hmr()
     .instructions("> ./src/index.tsx");
 });
@@ -88,7 +88,6 @@ Sparky.task("dev", ["&clean", "&config", "&client"], () => {
   console.log("DEVELOPMENT BUILD DONE");
 });
 Sparky.task("prd", ["&clean", "&config", "&clientprd"], () => {
-  // fuse.dev();
   fuse.run();
   console.log("PRODUCTION BUILD DONE");
 });
